@@ -10,6 +10,7 @@
   --margin-card: 30px;
   --margin-card-minus: -30px;
   --count-card: 4;
+  --time-func-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -160,6 +161,30 @@ body {
   display: flex;
 }
 
+.nav-menu a {
+  display: flex;
+  flex-direction: column;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: color;
+
+  position: relative;
+}
+
+.active {
+  color: var(--blue-color);
+}
+
+.active::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background: var(--blue-color);
+  border-radius: 2px;
+  position: relative;
+  top: 31px;
+}
+
 .nav-menu a:hover,
 .nav-menu a:focus {
   color: var(--blue-color);
@@ -169,10 +194,10 @@ body {
   margin-right: 50px;
 }
 
-.contacts-header a:hover,
+/* .contacts-header a:hover,
 .contacts-header a:focus {
   color: var(--blue-color);
-}
+} */
 
 .contacts-header {
   margin-left: auto;
@@ -198,6 +223,12 @@ body {
 .icon-contacts-header {
   fill: currentColor;
   margin-right: 10px;
+}
+
+.contact-header-content {
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: color;
 }
 
 .contact-header-content:hover,
@@ -258,6 +289,10 @@ body {
 
   color: white;
   border: none;
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: background-color;
 }
 
 .button-to-order:hover,
@@ -298,6 +333,10 @@ body {
 
   background-color: var(--background-color-second);
   border-radius: 4px;
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: box-shadow;
 }
 
 .icon-benefits-block:hover,
@@ -318,6 +357,24 @@ body {
 
 .list-what-we-do {
   --card-count: 4;
+}
+
+.what-we-do-item {
+  position: relative;
+}
+
+.what-we-do-text {
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 0;
 }
 
 /* Our team */
@@ -363,6 +420,9 @@ body {
   justify-content: center; */
 
   fill: var(--icon-color-gray);
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: background-color, fill;
 }
 
 .employer-soc-link:hover,
@@ -389,6 +449,10 @@ body {
   border: 1px solid var(--icon-color-gray);
   border-radius: 4px;
   fill: var(--icon-color-gray);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: background-color, fill;
 }
 
 /* .our-clients-item:hover,
@@ -448,6 +512,12 @@ body {
   margin-bottom: 20px;
 }
 
+.address a {
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: color;
+}
+
 .address a:hover,
 .address a:focus {
   color: var(--blue-color);
@@ -465,6 +535,10 @@ body {
 .footer-soc-link {
   fill: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: background-color;
 }
 
 .footer-soc-link:hover,
@@ -501,6 +575,12 @@ body {
   margin-right: 10px;
 }
 
+.menu-button button {
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: color, background-color, box-shadow;
+}
+
 .menu-button button:hover,
 .menu-button button:focus {
   background-color: var(--blue-color);
@@ -531,6 +611,9 @@ body {
 
 .link-project {
   display: block;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: box-shadow;
 }
 
 .link-project:hover,
@@ -543,3 +626,92 @@ body {
   padding: 20px 25px;
   border: solid 1px #ececec;
 }
+
+.project-description {
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  background-color: rgba(33, 150, 243, 0.9);
+
+  color: var(--white-color);
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 25px;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-property: transform;
+  transition-timing-function: var(--time-func-cubic);
+}
+
+.thumb-description {
+  position: relative;
+  overflow: hidden;
+}
+
+.link-project:hover .project-description {
+  transform: translateY(0);
+}
+
+/* __________ Model form (order) _____ */
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 500ms;
+  transition-timing-function: var(--time-func-cubic);
+}
+
+.backdrop {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-form {
+  position: relative;
+  width: 530px;
+  height: 580px;
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-button {
+  display: flex;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  /* padding: 30px; */
+  background-color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-func-cubic);
+  transition-property: background-color;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.close-button:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* .close-icon {
+  
+  margin-top: 10px;
+  margin-right: 10px;
+} */
