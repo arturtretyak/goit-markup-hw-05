@@ -319,14 +319,6 @@ body {
   width: 270px;
 }
 
-/* .benefit-card svg {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-} */
-
 .icon-benefits-block {
   padding: 25px;
   display: flex;
@@ -445,8 +437,6 @@ body {
   --count-card: 6;
 }
 
-/* .our-clients-item:hover,
-.our-clients-item:focus, */
 .client-link:hover,
 .client-link:focus {
   fill: var(--blue-color);
@@ -484,11 +474,6 @@ body {
 .address-company {
   color: white;
 }
-
-/* .address-contact {
-  text-decoration: none;
-  color: var(--gray-color);
-} */
 
 /* _____________ Social links */
 
@@ -546,7 +531,6 @@ body {
   transition-timing-function: var(--time-func-cubic);
   transition-property: color, background-color, box-shadow;
 
-  /* --margin-card: 10px; */
   padding: 5px 20px;
 }
 
@@ -561,9 +545,6 @@ body {
 }
 
 .menu-button button {
-  /* transition-duration: 250ms;
-  transition-timing-function: var(--time-func-cubic);
-  transition-property: color, background-color, box-shadow; */
 }
 
 .menu-filter-button:hover,
@@ -686,7 +667,7 @@ body {
   margin-right: 10px;
   position: absolute;
   right: 0;
-  /* padding: 30px; */
+
   background-color: var(--white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -703,9 +684,3 @@ body {
 .close-button:active {
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* .close-icon {
-  
-  margin-top: 10px;
-  margin-right: 10px;
-} */
