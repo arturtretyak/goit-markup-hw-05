@@ -657,7 +657,12 @@ body {
   border-radius: 4px;
   transition-duration: 250ms;
   transition-timing-function: var(--time-func-cubic);
-  transition-property: opacity, visibility;
+  transition-property: opacity, visibility, transform;
+}
+
+.backdrop.is-hidden .order-form {
+  opacity: 0;
+  transform: scale(0);
 }
 
 .close-button {
